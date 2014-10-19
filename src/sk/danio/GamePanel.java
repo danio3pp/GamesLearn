@@ -15,6 +15,9 @@ public class GamePanel extends JPanel implements Runnable{
     private BufferedImage image;
     private Graphics2D g;
 
+    private int FPS = 30;
+    private double averageFPS;
+    
     //Konstruktor
     public GamePanel(){
         super();
@@ -39,11 +42,37 @@ public class GamePanel extends JPanel implements Runnable{
         running = true;
         image = new BufferedImage(WIDTH,HEIGHT, BufferedImage.TYPE_INT_RGB);
         g = (Graphics2D) image.getGraphics();
+        
+        //premene a casy pre dosiahnutie max FPS
+        long startTime;
+        long URDTimeMillis;
+        long waitTime;
+        long totalTime = 0;
+        
+        int frameCount = 0;
+        int maxFrameCount = 30;
+        
+        long targetTime = 1000/FPS;
         //GameLoop
         while(running){
+            startTime = System.nanoTime();
             gameUpdate();
             gameRender();
             gameDraw();
+            URDTimeMillis = (System.nanoTime() - startTime) / 1000000;
+            waitTime = targetTime - URDTimeMillis;
+            try{
+                Thread.sleep(waitTime);
+            }
+            catch(Exception e){    
+            }
+            totalTime += System.nanoTime() - startTime;
+            frameCount++;
+            if(frameCount == maxFrameCount){
+                averageFPS = 1000.0/((totalTime / frameCount)/1000000);
+                frameCount = 0;
+                totalTime = 0;
+            }
         }
     }
     
@@ -52,10 +81,10 @@ public class GamePanel extends JPanel implements Runnable{
     }
     
     private void gameRender(){
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.WHITE);
         g.fillRect(0, 0, WIDTH, HEIGHT);
         g.setColor(Color.BLACK);
-        g.drawString("Hello World", 100, 100);
+        g.drawString("FPS: "+averageFPS, 10, 10);
     }
     
     private void gameDraw(){
