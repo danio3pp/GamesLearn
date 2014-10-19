@@ -1,5 +1,3 @@
-package sk.danio;
-
 import javax.swing.JFrame;
 
 public class Game {
@@ -8,9 +6,7 @@ public class Game {
         
         JFrame window = new JFrame("First Game");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
         window.setContentPane(new GamePanel());
-        
         window.pack();
         window.setVisible(true);
     }
