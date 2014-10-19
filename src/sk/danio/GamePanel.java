@@ -1,3 +1,5 @@
+package sk.danio;
+
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.image.*;
@@ -22,7 +24,9 @@ public class GamePanel extends JPanel implements Runnable{
     }
     
     //Funkcie
-    public void addNitify(){
+    @Override
+    public void addNotify(){
+        System.out.println("Test");
         super.addNotify();
         if(thread == null){
             thread = new Thread(this);
@@ -30,6 +34,7 @@ public class GamePanel extends JPanel implements Runnable{
         }
     }
     
+    @Override
     public void run(){
         running = true;
         image = new BufferedImage(WIDTH,HEIGHT, BufferedImage.TYPE_INT_RGB);
