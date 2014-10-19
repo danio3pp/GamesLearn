@@ -1,10 +1,18 @@
 package sk.danio;
-//try from GIT
+
+import javax.swing.JFrame;
+
 public class Game {
     
-    //konstruktor
-    public Game(){
+    public static void main(String[] args) {
         
+        JFrame window = new JFrame("First Game");
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        window.setContentPane(new GamePanel());
+        
+        window.pack();
+        window.setVisible(true);
     }
     
 }
