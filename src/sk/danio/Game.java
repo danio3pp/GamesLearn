@@ -1,7 +1,7 @@
 package sk.danio;
 
 import javax.swing.JFrame;
-//test z PC
+//Test GITu cez net
 public class Game {
     
     public static void main(String[] args) {
