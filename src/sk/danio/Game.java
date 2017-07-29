@@ -1,7 +1,7 @@
 package sk.danio;
 
 import javax.swing.JFrame;
-//Test GITu cez net po aktualizacii na 8.2
+//Test GITu cez net po aktualizacii na 8.2 a stahnutie z netu
 public class Game {
     
     public static void main(String[] args) {
