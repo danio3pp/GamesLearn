@@ -15,7 +15,7 @@ public class GamePanel extends JPanel implements Runnable{
     private BufferedImage image;
     private Graphics2D g;
 
-    private int FPS = 30;
+    private final int FPS = 30;
     private double averageFPS;
     
     //Konstruktor
