@@ -5,20 +5,20 @@ public class Player {
 
     //FIELDS
     
-    private int x;
-    private int y;
-    private int r;
+    private final int x;
+    private final int y;
+    private final int r;
     
-    private int dx;
-    private int dy;
-    private int speed;
+    private final int dx;
+    private final int dy;
+    private final int speed;
     
     private boolean left;
     private boolean right;
     private boolean up;
     private boolean down;
     
-    private int lives;
+    private final int lives;
     
     //CONSTRUCTOR
     public Player(){
