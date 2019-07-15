@@ -1,7 +1,7 @@
 package sk.danio;
 
 import javax.swing.JFrame;
-//Test GITu cez net po aktualizacii na 9.0 a stahnutie z netu
+//NetBeans 11 test
 public class Game {
     
     public static void main(String[] args) {
